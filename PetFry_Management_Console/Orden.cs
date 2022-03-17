@@ -8,7 +8,7 @@ namespace PetFry_Management_Console
 {
     public class Orden
     {
-        private Persona _cliente;
+        private Cliente _cliente;
         private Mascota _mascota;
         private string _tipo;
         private List<Articulo> _listaCompra;
@@ -16,7 +16,7 @@ namespace PetFry_Management_Console
         private DateTime _fecha;
         private string _notas;
 
-        public Persona Cliente { get => _cliente; set => _cliente = value; }
+        public Cliente Cliente { get => _cliente; set => _cliente = value; }
         public Mascota Mascota { get => _mascota; set => _mascota = value; }
         public string Tipo { get => _tipo; set => _tipo = value; }
         public List<Articulo> ListaCompra { get => _listaCompra; set => _listaCompra = value; }
@@ -24,7 +24,7 @@ namespace PetFry_Management_Console
         public DateTime Fecha { get => _fecha; set => _fecha = value; }
         public string Notas { get => _notas; set => _notas = value; }
 
-        public Orden(Persona cliente, string tipo, string notas, Mascota mascota)
+        public Orden(Cliente cliente, string tipo, string notas, Mascota mascota)
         {
             Cliente = cliente;
             Mascota = mascota;
@@ -35,7 +35,7 @@ namespace PetFry_Management_Console
             Fecha = DateTime.Now;
         }
 
-        public Orden(Persona cliente, string tipo, Mascota mascota)
+        public Orden(Cliente cliente, string tipo, Mascota mascota)
         {
             Cliente = cliente;
             Mascota = mascota;
@@ -46,7 +46,7 @@ namespace PetFry_Management_Console
             Fecha = DateTime.Now;
         }
 
-        public Orden(Persona cliente, string tipo, string notas)
+        public Orden(Cliente cliente, string tipo, string notas)
         {
             Cliente = cliente;
             Mascota = null;
@@ -57,7 +57,7 @@ namespace PetFry_Management_Console
             Fecha = DateTime.Now;
         }
 
-        public Orden(Persona cliente, string tipo)
+        public Orden(Cliente cliente, string tipo)
         {
             Cliente = cliente;
             Mascota = null;
@@ -70,14 +70,14 @@ namespace PetFry_Management_Console
 
         public void AgregarArticulo(Articulo articulo)
         {
-            if (articulo.Tipo == Tipo)
+            if ((Tipo == "Producto" & articulo is Producto) | (Tipo == "Servicio" & articulo is Servicio))
             {
                 ListaCompra.Add(articulo);
                 ValorTotal = CalcularValor(ListaCompra);
             }
             else
             {
-                throw new Exception("Tipo de artículo no compatible con el tipo de orden");
+                throw new Exception("[!] Tipo de artículo no compatible con el tipo de orden.");
             }
         }
 

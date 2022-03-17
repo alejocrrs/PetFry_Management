@@ -9,7 +9,7 @@ namespace PetFry_Management_Console
     public class Mascota
     {
         private string _nombre;
-        private Persona _propietario;
+        private Cliente _propietario;
         private string _animal;
         private string _raza;
         private double _peso;
@@ -17,14 +17,14 @@ namespace PetFry_Management_Console
         private string _notas;
 
         public string Nombre { get => _nombre; set => _nombre = value; }
-        public Persona Propietario { get => _propietario; set => _propietario = value; }
+        public Cliente Propietario { get => _propietario; set => _propietario = value; }
         public string Animal { get => _animal; set => _animal = value; }
         public string Raza { get => _raza; set => _raza = value; }
         public double Peso { get => _peso; set => _peso = value; }
         public string Color { get => _color; set => _color = value; }
         public string Notas { get => _notas; set => _notas = value; }
 
-        public Mascota(string nombre, Persona propietario, string animal, string raza, double peso, string color, 
+        public Mascota(string nombre, Cliente propietario, string animal, string raza, double peso, string color, 
             string notas)
         {
             Nombre = nombre;
@@ -36,7 +36,7 @@ namespace PetFry_Management_Console
             Notas = notas;
         }
 
-        public Mascota(string nombre, Persona propietario, string animal, string raza, double peso, string color)
+        public Mascota(string nombre, Cliente propietario, string animal, string raza, double peso, string color)
         {
             Nombre = nombre;
             Propietario = propietario;
@@ -47,7 +47,7 @@ namespace PetFry_Management_Console
             Notas = "";
         }
 
-        public Mascota(string nombre, Persona propietario, string animal, string raza, double peso)
+        public Mascota(string nombre, Cliente propietario, string animal, string raza, double peso)
         {
             Nombre = nombre;
             Propietario = propietario;
@@ -58,7 +58,7 @@ namespace PetFry_Management_Console
             Notas = "";
         }
 
-        public Mascota(string nombre, Persona propietario, string animal, string raza)
+        public Mascota(string nombre, Cliente propietario, string animal, string raza)
         {
             Nombre = nombre;
             Propietario = propietario;
@@ -69,7 +69,7 @@ namespace PetFry_Management_Console
             Notas = "";
         }
 
-        public Mascota(string nombre, Persona propietario, string animal)
+        public Mascota(string nombre, Cliente propietario, string animal)
         {
             Nombre = nombre;
             Propietario = propietario;

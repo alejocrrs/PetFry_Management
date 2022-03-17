@@ -12,18 +12,20 @@ namespace PetFry_Management_Console
         private string _direccion;
         private string _telefono;
         private string _correo;
-        private List<Persona> _personas;
+        private List<Cliente> _clientes;
         private List<Mascota> _mascotas;
-        private List<Articulo> _articulos;
+        private List<Producto> _productos;
+        private List<Servicio> _servicios;
         private List<Orden> _ordenes;
 
         public string Nombre { get => _nombre; set => _nombre = value; }
         public string Direccion { get => _direccion; set => _direccion = value; }
         public string Telefono { get => _telefono; set => _telefono = value; }
         public string Correo { get => _correo; set => _correo = value; }
-        public List<Persona> Personas { get => _personas; set => _personas = value; }
+        public List<Cliente> Clientes { get => _clientes; set => _clientes = value; }
         public List<Mascota> Mascotas { get => _mascotas; set => _mascotas = value; }
-        public List<Articulo> Articulos { get => _articulos; set => _articulos = value; }
+        public List<Producto> Productos { get => _productos; set => _productos = value; }
+        public List<Servicio> Servicios { get => _servicios; set => _servicios = value; }
         public List<Orden> Ordenes { get => _ordenes; set => _ordenes = value; }
 
         public Veterinaria(string nombre, string direccion, string telefono, string correo)
@@ -33,20 +35,21 @@ namespace PetFry_Management_Console
             Telefono = telefono;
             Correo = correo;
 
-            Personas = new List<Persona>();
+            Clientes = new List<Cliente>();
             Mascotas = new List<Mascota>();
-            Articulos = new List<Articulo>();
+            Productos = new List<Producto>();
+            Servicios = new List<Servicio>();
             Ordenes = new List<Orden>();
         }
 
-        public void AgregarPersona(Persona persona)
+        public void AgregarCliente(Cliente cliente)
         {
-            Personas.Add(persona);
+            Clientes.Add(cliente);
         }
 
-        public void EliminarPersona(Persona persona)
+        public void EliminarCliente(Cliente cliente)
         {
-            Personas.Remove(persona);
+            Clientes.Remove(cliente);
         }
 
         public void AgregarMascota(Mascota mascota)
@@ -59,14 +62,23 @@ namespace PetFry_Management_Console
             Mascotas.Remove(mascota);
         }
 
-        public void AgregarArticulo(Articulo objetoCompra)
+        public void AgregarProducto(Producto producto)
         {
-            Articulos.Add(objetoCompra);
+            Productos.Add(producto);
         }
 
-        public void EliminarArticulo(Articulo objetoCompra)
+        public void EliminarProducto(Producto producto)
         {
-            Articulos.Remove(objetoCompra);
+            Productos.Remove(producto);
+        }
+        public void AgregarServicio(Servicio servicio)
+        {
+            Servicios.Add(servicio);
+        }
+
+        public void EliminarServicio(Servicio servicio)
+        {
+            Servicios.Remove(servicio);
         }
 
         public void AgregarOrden(Orden orden)

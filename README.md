@@ -1,1 +1,2 @@
-PetFry_Management_Console
+ATENCIÓN: NUEVO REPOSITORIO ACTUALIZADO CON INTERFAZ GRÁFICA DE USUARIO:
+github.com/alejocrrs/PetFry
